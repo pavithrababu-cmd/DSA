@@ -1,0 +1,25 @@
+import java.util.Arrays;
+
+public class ArrayEqualityChecker {
+    public static void main(String[] args) {
+        int[] a = {1, 2, 5};
+        int[] b = {2, 4, 15};
+
+        boolean result = areArraysEqualAfterSorting(a, b);
+        System.out.println(result); // Output: false
+    }
+
+    public static boolean areArraysEqualAfterSorting(int[] a, int[] b) {
+        // Check if lengths are the same
+        if (a.length != b.length) {
+            return false;
+        }
+
+        // Sort both arrays
+        Arrays.sort(a);
+        Arrays.sort(b);
+
+        // Compare the sorted arrays
+        return Arrays.equals(a, b);
+    }
+}
